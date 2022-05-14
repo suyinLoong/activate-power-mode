@@ -1,8 +1,8 @@
 # activate-power-mode
 
-[power mode](https://github.com/codeinthedark/editor/pull/1) script for any website
-used [textarea-caret-position library](https://github.com/component/textarea-caret-position).
-[demo](https://cloud.githubusercontent.com/assets/688415/11440971/aadfae8e-9507-11e5-8aa0-0ecc87ca84b6.gif)
+- [power mode](https://github.com/codeinthedark/editor/pull/1) script for any website
+- used [textarea-caret-position library](https://github.com/component/textarea-caret-position).
+- [demo](https://cloud.githubusercontent.com/assets/688415/11440971/aadfae8e-9507-11e5-8aa0-0ecc87ca84b6.gif)
 
 
 ## 如何使用
