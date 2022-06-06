@@ -10,9 +10,9 @@
 ```html
 <script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
 <script>
-POWERMODE.colorful = true; // make power mode colorful
-POWERMODE.shake = false; // turn off shake
-document.body.addEventListener('input', POWERMODE);
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
 </script>
 ```
 
@@ -25,9 +25,9 @@ document.body.addEventListener('input', POWERMODE);
   ```njk
   <script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
   <script>
-  POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = false; // turn off shake
-  document.body.addEventListener('input', POWERMODE);
+      POWERMODE.colorful = true; // make power mode colorful
+      POWERMODE.shake = false; // turn off shake
+      document.body.addEventListener('input', POWERMODE);
   </script>
   ```
 **2.[Next](https://github.com/next-theme/hexo-theme-next)配置**
