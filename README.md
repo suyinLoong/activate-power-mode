@@ -19,7 +19,7 @@ document.body.addEventListener('input', POWERMODE);
 ## 在Hexo Next主题上使用
 
 **1.[Hexo](https://hexo.io/)配置**
-- 在 `/Hexo/source/` 目录下新建`_data`目录
+- 在 `/Hexo/source/` 目录下新建 `_data` 目录
 - 在 `_data` 目录下新建 `footer.njk` 文件夹
 - 在文件夹中写入以下代码：
   ```njk
