@@ -19,8 +19,8 @@ document.body.addEventListener('input', POWERMODE);
 ## 在Hexo Next主题上使用
 
 **1.[Hexo](https://hexo.io/)配置**
-- 在`/Hexo/source/`目录下新建`_data`目录
-- 在`_data`目录下新建`footer.njk`文件夹
+- 在 `/Hexo/source/` 目录下新建`_data`目录
+- 在 `_data` 目录下新建 `footer.njk` 文件夹
 - 在文件夹中写入以下代码：
   ```njk
   <script src="https://cdn.jsdelivr.net/gh/suyin-long/activate-power-mode@1.0/dist/activate-power-mode.js"></script>
@@ -31,8 +31,8 @@ document.body.addEventListener('input', POWERMODE);
   </script>
   ```
 **2.[Next](https://github.com/next-theme/hexo-theme-next)配置**
-- 在Next配置文件中找到`custom_file_path:`
-- 取消`footer: source/_data/footer.njk`的注释
+- 在Next配置文件中找到 `custom_file_path:`
+- 取消 `footer: source/_data/footer.njk` 的注释
 
 ## 效果展示
 
