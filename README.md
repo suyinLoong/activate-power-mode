@@ -34,6 +34,3 @@
 - 在Next配置文件中找到 `custom_file_path:`
 - 取消 `footer: source/_data/footer.njk` 的注释
 
-## 效果展示
-
-- https://suyin-blog.club/
