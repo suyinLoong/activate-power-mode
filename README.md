@@ -32,5 +32,5 @@
   ```
 **2.[Next](https://github.com/next-theme/hexo-theme-next)配置**
 - 在Next配置文件中找到 `custom_file_path:`
-- 取消 `footer: source/_data/bodyEnd.njk` 的注释
+- 取消 `bodyEnd: source/_data/body-end.njk` 的注释
 
