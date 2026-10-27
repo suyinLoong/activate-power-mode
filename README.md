@@ -20,9 +20,9 @@
 
 1.[Hexo](https://hexo.io/) 配置
 
-- 在 `/Hexo/source/` 目录下新建 `_data` 目录
-- 在 `_data` 目录下新建 `bodyEnd.njk` 文件夹
-- 在文件夹中写入以下代码：
+- 在 `/Hexo/source/` 目录下新建 `_data` 文件夹
+- 在 `_data` 文件夹下新建 `bodyEnd.njk` 文件
+- 在该文件中写入以下代码：
   ```njk
   <script src="https://cdn.jsdelivr.net/gh/suyinLoong/activate-power-mode@1.2/dist/activate-power-mode.js"></script>
   <script>
