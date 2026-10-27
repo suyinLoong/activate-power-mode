@@ -88,13 +88,71 @@
                 }
             }
 
+            // --- caret tracking for inputs without selection API support ---
+            // input[type=email] etc. return null for selectionStart/End, so
+            // estimate the caret from the diff between the previous and the
+            // current value on every input event. Runs on document capture
+            // phase, i.e. before POWERMODE's body-level bubble listener.
+            function getTrackedCaret(el) {
+                var state = el.__powermodeCaret;
+                if (!state) {
+                    state = { value: el.value || '', caret: (el.value || '').length };
+                    el.__powermodeCaret = state;
+                }
+                return state.caret;
+            }
+
+            document.addEventListener('focusin', function (e) {
+                var el = e.target;
+                if (el && el.tagName === 'INPUT' && el.selectionEnd === null) {
+                    el.__powermodeCaret = { value: el.value || '', caret: (el.value || '').length };
+                }
+            }, true);
+
+            document.addEventListener('input', function (e) {
+                var el = e.target;
+                if (!el || el.tagName !== 'INPUT' || el.selectionEnd !== null) return;
+                var state = el.__powermodeCaret;
+                if (!state) {
+                    state = { value: '', caret: 0 };
+                    el.__powermodeCaret = state;
+                }
+                var oldValue = state.value;
+                var newValue = el.value || '';
+                if (oldValue === newValue) return;
+                // locate the changed region via common prefix + common suffix
+                var prefix = 0;
+                var maxPrefix = Math.min(oldValue.length, newValue.length);
+                while (prefix < maxPrefix && oldValue.charAt(prefix) === newValue.charAt(prefix)) {
+                    prefix++;
+                }
+                var suffix = 0;
+                var maxSuffix = Math.min(oldValue.length, newValue.length) - prefix;
+                while (suffix < maxSuffix &&
+                       oldValue.charAt(oldValue.length - 1 - suffix) === newValue.charAt(newValue.length - 1 - suffix)) {
+                    suffix++;
+                }
+                var inserted = newValue.length - suffix - prefix;
+                if (inserted < 0) inserted = 0;
+                state.caret = prefix + inserted;
+                state.value = newValue;
+            }, true);
+
             function getCaret() {
                 var el = document.activeElement;
                 var bcr;
                 var textLikeInputTypes = ['text', 'search', 'email', 'url', 'tel', 'password'];
                 if (el.tagName === 'TEXTAREA' ||
                     (el.tagName === 'INPUT' && textLikeInputTypes.indexOf(el.type) !== -1)) {
-                    var offset = __webpack_require__(1)(el, el.selectionEnd);
+                    var position = el.selectionEnd;
+                    if (position === null || position === undefined) {
+                        // The selection API is not supported for this input
+                        // type (e.g. type="email" returns null), and toggling
+                        // the type would reset the caret to 0. Use the caret
+                        // position estimated by the input-diff tracker below.
+                        position = getTrackedCaret(el);
+                    }
+                    var offset = __webpack_require__(1)(el, position);
                     bcr = el.getBoundingClientRect();
                     return {
                         x: offset.left + bcr.left,
