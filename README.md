@@ -10,8 +10,8 @@
 ```html
 <script src="https://cdn.jsdelivr.net/gh/suyinLoong/activate-power-mode@1.2/dist/activate-power-mode.js"></script>
 <script>
-    POWERMODE.colorful = true; // 让特效呈现彩色
-    POWERMODE.shake = false;   // 关闭屏幕抖动
+    POWERMODE.colorful = true; // 彩色特效
+    POWERMODE.shake = false;   // 屏幕抖动
     document.body.addEventListener('input', POWERMODE);
 </script>
 ```
@@ -26,8 +26,8 @@
   ```njk
   <script src="https://cdn.jsdelivr.net/gh/suyinLoong/activate-power-mode@1.2/dist/activate-power-mode.js"></script>
   <script>
-      POWERMODE.colorful = true; // 让特效呈现彩色
-      POWERMODE.shake = false;   // 关闭屏幕抖动
+      POWERMODE.colorful = true; // 彩色特效
+      POWERMODE.shake = false;   // 屏幕抖动
       document.body.addEventListener('input', POWERMODE);
   </script>
   ```
