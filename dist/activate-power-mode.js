@@ -337,6 +337,13 @@
                         style[prop] = computed[prop];
                     });
 
+                    // 密码框渲染的是圆点而不是真实字符，镜像 div 必须同样做掩码，
+                    // 否则量出来的光标位置会比实际偏右。
+                    if (element.type === 'password') {
+                        style.setProperty('-webkit-text-security', 'disc');
+                        style.setProperty('text-security', 'disc');
+                    }
+
                     if (isFirefox) {
                         // Firefox lies about the overflow property for textareas: https://bugzilla.mozilla.org/show_bug.cgi?id=984275
                         if (element.scrollHeight > parseInt(computed.height))
