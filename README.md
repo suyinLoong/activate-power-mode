@@ -8,7 +8,7 @@
 ## 如何使用
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/suyinLoong/activate-power-mode@1.2/dist/activate-power-mode.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/suyinLoong/activate-power-mode@1.3/dist/activate-power-mode.js"></script>
 <script>
     POWERMODE.colorful = true; // 彩色特效
     POWERMODE.shake = false;   // 屏幕抖动
@@ -24,7 +24,7 @@
 - 在 `_data` 文件夹下新建 `bodyEnd.njk` 文件
 - 在该文件中写入以下代码：
   ```njk
-  <script src="https://cdn.jsdelivr.net/gh/suyinLoong/activate-power-mode@1.2/dist/activate-power-mode.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/suyinLoong/activate-power-mode@1.3/dist/activate-power-mode.js"></script>
   <script>
       POWERMODE.colorful = true; // 彩色特效
       POWERMODE.shake = false;   // 屏幕抖动
